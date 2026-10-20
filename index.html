@@ -8,7 +8,8 @@
     <meta name="theme-color" content="#992802">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Fredoka:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Fredoka:wght@400;500;600&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
@@ -43,6 +44,7 @@
             <p class="script menu-tit">Más aquí</p>
             <a href="#inicio">Tú y yo</a>
             <a href="#recuerdos">Fotitos uwu</a>
+            <a href="#capsulas">Domingo de novios</a>
             <a href="#carta">Mensajitos</a>
             <button id="btn-musica" class="menu-btn" type="button">Música: apagada</button>
         </nav>
@@ -76,14 +78,177 @@
             <div id="album" class="album"></div>
         </section>
 
+        
+<!-- DOMINGO DE NOVIOS -->
+<section class="seccion" id="capsulas">
+    <h2 class="script">Domingo de novios</h2>
+
+    <p class="gacha-sub">
+        Gira la perilla y descubre qué plan nos toca.
+        Todos son sencillos, económicos y hechos para nosotros dos.
+    </p>
+
+    <div class="gacha-zona bloqueada" id="gacha-zona">
+
+        <!-- CONTENIDO DE LA MÁQUINA: OCULTO MIENTRAS ESTÉ BLOQUEADA -->
+        <div class="gacha-contenido" id="g-contenido">
+
+            <!-- Máquina de cápsulas -->
+            <div class="gacha" id="gacha">
+
+                <svg class="maquina" viewBox="0 0 260 380"
+                     role="img" aria-label="Máquina de cápsulas">
+
+                    <defs>
+                        <clipPath id="clip-globo">
+                            <circle cx="130" cy="112" r="85" />
+                        </clipPath>
+
+                        <clipPath id="clip-ranura">
+                            <rect x="148" y="268" width="58" height="64" rx="12" />
+                        </clipPath>
+                    </defs>
+
+                    <ellipse cx="130" cy="370" rx="98" ry="7"
+                             fill="rgba(0,0,0,.28)" />
+
+                    <!-- Globo -->
+                    <circle class="vidrio" cx="130" cy="112" r="88" />
+
+                    <g clip-path="url(#clip-globo)">
+                        <g id="bolas"></g>
+                    </g>
+
+                    <path class="brillo" d="M62 96a70 70 0 0 1 30-44" />
+                    <circle class="aro" cx="130" cy="112" r="88" />
+                    <rect class="tapa" x="104" y="12" width="52" height="18" rx="9" />
+
+                    <!-- Cuerpo -->
+                    <rect class="cuello" x="38" y="186" width="184" height="22" rx="9" />
+
+                    <path class="cuerpo"
+                          d="M44 208h172v128a26 26 0 0 1-26 26H70a26 26 0 0 1-26-26z" />
+
+                    <path class="luz" d="M58 252v78" />
+
+                    <rect class="placa-t" x="62" y="218" width="136" height="22" rx="11" />
+
+                    <text class="rotulo" x="130" y="233" text-anchor="middle">
+                        DOMINGO DE NOVIOS
+                    </text>
+
+                    <!-- Perilla -->
+                    <circle class="placa" cx="88" cy="292" r="34" />
+
+                    <g id="rueda" class="rueda">
+                        <rect class="mando" x="62" y="284" width="52" height="16" rx="8" />
+                        <circle class="eje" cx="88" cy="292" r="6" />
+                    </g>
+
+                    <text class="rotulo chico" x="88" y="346" text-anchor="middle">
+                        GIRA
+                    </text>
+
+                    <!-- Salida de la cápsula -->
+                    <rect class="boca" x="148" y="268" width="58" height="64" rx="12" />
+
+                    <g clip-path="url(#clip-ranura)">
+                        <g id="cap" class="cap">
+                            <path class="cap-t" d="M161 306a16 16 0 0 1 32 0z" />
+                            <path class="cap-b" d="M161 306a16 16 0 0 0 32 0z" />
+                            <circle class="bc" cx="177" cy="306" r="16" />
+                            <ellipse class="bl" cx="171" cy="298" rx="4" ry="2.4"
+                                     transform="rotate(-35 171 298)" />
+                        </g>
+                    </g>
+
+                    <rect class="tapita" x="148" y="268" width="58" height="22" rx="10" />
+
+                    <text class="rotulo chico" x="177" y="346" text-anchor="middle">
+                        TU CITA
+                    </text>
+
+                    <!-- Destellos -->
+                    <g transform="translate(24 70)">
+                        <path class="chispa"
+                              d="M0-10L3-3L10 0L3 3L0 10L-3 3L-10 0L-3-3Z" />
+                    </g>
+
+                    <g transform="translate(240 96)">
+                        <path class="chispa" style="animation-delay:.7s"
+                              d="M0-10L3-3L10 0L3 3L0 10L-3 3L-10 0L-3-3Z" />
+                    </g>
+
+                    <g transform="translate(238 30)">
+                        <path class="chispa" style="animation-delay:1.4s"
+                              d="M0-8L2.4-2.4L8 0L2.4 2.4L0 8L-2.4 2.4L-8 0L-2.4-2.4Z" />
+                    </g>
+                </svg>
+
+                <button id="perilla" class="perilla" type="button"
+                        aria-label="Girar la perilla">
+                </button>
+            </div>
+
+            <!-- Estado -->
+            <p class="g-estado" id="g-estado"></p>
+
+            <!-- Contador -->
+            <p class="gacha-cont">
+                Citas desbloqueadas:
+                <b id="g-cont">0</b>/<span id="g-total">0</span>
+            </p>
+
+            <!-- Colección -->
+            <div id="coleccion" class="coleccion"></div>
+
+        </div>
+
+        <!-- MENSAJE DE BLOQUEO: ÚNICO ELEMENTO VISIBLE -->
+        <div class="candado" id="candado">
+            <div class="candado-card">
+
+                <svg class="ico ico-candado" viewBox="0 0 64 64"
+                     aria-hidden="true">
+                    <path class="n" d="M20 28v-8a12 12 0 0 1 24 0v8" />
+                    <rect class="a" x="14" y="28" width="36" height="28" rx="6" />
+                    <circle class="b" cx="32" cy="41" r="4" />
+                    <path class="n" d="M32 44v7" />
+                </svg>
+
+                <h3 class="script">Todavía no se abre</h3>
+
+                <p>
+                    La máquina se activa el <b>21 de octubre uu</b>.
+                    Un poquito de paciencia, mi amor.
+                </p>
+
+                <span class="costo" id="cuenta-atras"></span>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
         <!-- CARTA -->
         <section class="seccion" id="carta">
             <div class="carta">
-                <h2 class="script">Para ti, mi papita bella hermosa  tikita</h2>
+                <h2 class="script">Para ti, mi papita bella hermosa tikita</h2>
                 <p>TE AMOOOOOOOOOOO</p>
-                <p>Hola mi niña preciosa, no sabes lo feliz que me siento al escribir esto, sin duda nunca pensé en poder sentir, de la forma en la que siento ahora mismo, el despertar sabiendo que tengo una mujer tan preciosa e inteligente a mi lado, el ver nuestro chat y el no creerme que hallamos formado una historia tan grande, en tan poco tiempo. Y se que es algo que nos ha costado mucho, pues en una relación siempre hay altos y bajos, y te agradezco por a pesar de todolo que nos ha podido haber ocurrido, haya decidido quedarte, porque al fin y al cabo, es una decisión.
-                Te adoro, me haces el niño mas feliz del mundo, se que algunas veces piensas que no te quiero o no pienso en ti de la forma en al que tu lo haces conmigo, pero te equivocas, eres mi primer pensamiento al despertar, te tengo a mi lado como una constante C luego de resolver una integrar indefinida.
-                Anhelo estar pegado a ti como la dx/dy en una derivada, y nunca separarnos porque alteraríamos la realidad</p>
+                <p>Hola mi niña preciosa, no sabes lo feliz que me siento al escribir esto, sin duda nunca pensé en
+                    poder sentir, de la forma en la que siento ahora mismo, el despertar sabiendo que tengo una mujer
+                    tan preciosa e inteligente a mi lado, el ver nuestro chat y el no creerme que hallamos formado una
+                    historia tan grande, en tan poco tiempo. Y se que es algo que nos ha costado mucho, pues en una
+                    relación siempre hay altos y bajos, y te agradezco por a pesar de todolo que nos ha podido haber
+                    ocurrido, haya decidido quedarte, porque al fin y al cabo, es una decisión.
+                    Te adoro, me haces el niño mas feliz del mundo, se que algunas veces piensas que no te quiero o no
+                    pienso en ti de la forma en al que tu lo haces conmigo, pero te equivocas, eres mi primer
+                    pensamiento al despertar, te tengo a mi lado como una constante C luego de resolver una integrar
+                    indefinida.
+                    Anhelo estar pegado a ti como la dx/dy en una derivada, y nunca separarnos porque alteraríamos la
+                    realidad</p>
                 <p class="firma script">— Tu papatin uwu</p>
             </div>
         </section>
@@ -96,6 +261,22 @@
         <button id="cerrar" aria-label="Cerrar">✕</button>
         <img id="lb-img" alt="">
         <p id="lb-txt"></p>
+    </div>
+
+    <!-- PREMIO -->
+    <div id="premio" class="premio" hidden>
+        <div class="premio-card" role="dialog" aria-modal="true" aria-labelledby="p-titulo">
+            <div class="medallon">
+                <div class="icono" id="p-icono"></div>
+                <span class="mitad sup"></span>
+                <span class="mitad inf"></span>
+            </div>
+            <p class="etiqueta">Tu próximo domingo</p>
+            <h3 class="script" id="p-titulo"></h3>
+            <p class="p-texto" id="p-texto"></p>
+            <span class="costo" id="p-costo"></span>
+            <button id="p-cerrar" class="btn" type="button">¡Es una cita!</button>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
