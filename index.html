@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Mi papita hermosa uwu</title>
+    <meta name="theme-color" content="#d62839">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Fredoka:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+    <div class="fondo"></div>
+    <div id="flotantes" aria-hidden="true"></div>
+
+    <!-- PORTADA -->
+    <section id="portada" class="portada">
+        <div class="sobre">
+            <img src="img/papita.JPEG" alt="Pibble">
+        </div>
+        <h1 class="script">Para mi wawita:3</h1>
+        <p>Hola clickea akí papu…</p>
+        <button id="abrir" class="btn">No no click no </button>
+    </section>
+
+    <main id="contenido" hidden>
+
+        <!-- BARRA SUPERIOR + HAMBURGUESA -->
+        <div class="topbar">
+            <a href="#inicio" class="marca script">Maryory y Helson</a>
+            <button id="burger" class="burger" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+
+        <div id="velo" class="velo"></div>
+
+        <nav id="menu" class="menu" aria-label="Menú principal">
+            <p class="script menu-tit">Más aquí</p>
+            <a href="#inicio">Tú y yo</a>
+            <a href="#recuerdos">Fotitos uwu</a>
+            <a href="#carta">Mensajitos</a>
+            <button id="btn-musica" class="menu-btn" type="button">Música: apagada</button>
+        </nav>
+
+        <audio id="musica" loop preload="none" src="img/Parálisis del Sueño.mp3"></audio>
+        <button id="arriba" class="arriba" aria-label="Subir">↑</button>
+
+        <!-- HERO -->
+        <header class="hero" id="inicio">
+            <p class="mini">Un mesesito, casi una</p>
+            <h1 class="script titulo">Vida entera contigo</h1>
+            <p class="sub">Nuestro albumsito virtual uwu</p>
+            <div class="contador">
+                <div><b id="dias">0</b><span>días</span></div>
+                <div><b id="horas">0</b><span>horas</span></div>
+                <div><b id="mins">0</b><span>min</span></div>
+                <div><b id="segs">0</b><span>seg</span></div>
+            </div>
+        </header>
+
+        <!-- RECUERDOS -->
+        <section class="seccion" id="recuerdos">
+            <h2 class="script">Nuestros recuerdos</h2>
+
+            <div class="filtros">
+                <button class="chip on" data-f="todos">Todos</button>
+                <button class="chip" data-f="foto">Pics</button>
+                <button class="chip" data-f="video">Videos</button>
+            </div>
+
+            <div id="album" class="album"></div>
+        </section>
+
+        <!-- CARTA -->
+        <section class="seccion" id="carta">
+            <div class="carta">
+                <h2 class="script">Para ti, mi papita bella hermosa  tikita</h2>
+                <p>TE AMOOOOOOOOOOO</p>
+                <p>Hola mi niña preciosa, no sabes lo feliz que me siento al escribir esto, sin duda nunca pensé en poder sentir, de la forma en la que siento ahora mismo, el despertar sabiendo que tengo una mujer tan preciosa e inteligente a mi lado, el ver nuestro chat y el no creerme que hallamos formado una historia tan grande, en tan poco tiempo. Y se que es algo que nos ha costado mucho, pues en una relación siempre hay altos y bajos, y te agradezco por a pesar de todolo que nos ha podido haber ocurrido, haya decidido quedarte, porque al fin y al cabo, es una decisión.
+                Te adoro, me haces el niño mas feliz del mundo, se que algunas veces piensas que no te quiero o no pienso en ti de la forma en al que tu lo haces conmigo, pero te equivocas, eres mi primer pensamiento al despertar, te tengo a mi lado como una constante C luego de resolver una integrar indefinida.
+                Anhelo estar pegado a ti como la dx/dy en una derivada, y nunca separarnos porque alteraríamos la realidad</p>
+                <p class="firma script">— Tu papatin uwu</p>
+            </div>
+        </section>
+
+        <footer>Hecho con cariño de: Helsito tu sonsito uwuwuwu</footer>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox" class="lightbox" hidden>
+        <button id="cerrar" aria-label="Cerrar">✕</button>
+        <img id="lb-img" alt="">
+        <p id="lb-txt"></p>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>
