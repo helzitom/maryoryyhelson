@@ -57,6 +57,13 @@ const RECUERDOS = [
   },
   {
     tipo: "foto",
+    src: "img/com.JPEG",
+    fecha: "7 oct",
+    titulo: "Pre BTS uwuwu",
+    texto: "MI papita comiendo su cuchareable de chocolate con fresa (con todo y tallo) U n U",
+  },
+  {
+    tipo: "foto",
     src: "img/7.jpg",
     fecha: "17 oct",
     titulo: "Post Berilio",
